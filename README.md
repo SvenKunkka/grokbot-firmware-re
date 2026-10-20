@@ -1,3 +1,7 @@
+<!-- SVENKUNKKA-README-NAV:BEGIN -->
+[中文项目说明](#project-overview-zh) · [English overview](#project-overview-en) · [维护者 X / Maintainer on X](https://x.com/Svenu1s5)
+<!-- SVENKUNKKA-README-NAV:END -->
+
 # grokbot-firmware-re
 对**合法取得**的 MCU 固件 .bin 做初步分诊，再交给 Ghidra 深入分析。
 
@@ -13,3 +17,30 @@
 python scripts/bin_triage.py firmware.bin --base 0x08000000
 ```
 仅限你有权分析的固件，遵守当地法律与许可协议。
+
+
+---
+
+<!-- SVENKUNKKA-PROJECT-INFO:BEGIN -->
+
+<a id="project-overview-zh"></a>
+## 中文项目说明
+
+为合法取得的 MCU 二进制固件提供初步分诊：统计大小、SHA-256、分块熵和可打印字符串，并推测 Cortex-M 向量表及加载基址，辅助后续 Ghidra 分析。
+
+**使用入口：** 仅需 Python 标准库；运行 `python scripts/bin_triage.py firmware.bin --base 0x08000000`，分析流程见 `SKILL.md`。
+
+**范围说明：** 向量表、基址与加密或压缩状态属于分析线索，仍需进一步核验；仅分析有权处理的固件。
+
+<a id="project-overview-en"></a>
+## English project overview
+
+Provides initial triage for lawfully obtained MCU firmware: size, SHA-256, block entropy, printable strings, and Cortex-M vector-table and load-address hypotheses to support further Ghidra analysis.
+
+**Getting started:** Uses only the Python standard library. Run `python scripts/bin_triage.py firmware.bin --base 0x08000000`; see `SKILL.md` for the workflow.
+
+**Scope:** Vector-table, base-address, and encryption or compression findings are leads requiring further verification. Analyze only firmware you are authorized to examine.
+
+**仓库维护者 / Repository maintainer:** [SvenKunkka](https://github.com/SvenKunkka) · [X / Twitter](https://x.com/Svenu1s5)
+
+<!-- SVENKUNKKA-PROJECT-INFO:END -->
